@@ -49,6 +49,10 @@ Feedback and contributions are welcome. Please feel welcome to get in touch, [op
 
 The content describes my approach, today, which makes it of course quite personal. Nonetheless, I am particularly interested in knowing if the way ideas are presented and the tone seem appropriate to you, or how they could be improved.
 
+Please note that by participating in this project, you agree to abide by its [code of conduct]. Hopefully, by the time you've read this and consider contributing, you won't be too surprised to hear that 😉
+
+  [code of conduct]: ./CODE_OF_CONDUCT.md
+
 License
 -------
 
