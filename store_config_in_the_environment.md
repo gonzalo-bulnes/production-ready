@@ -59,8 +59,9 @@ In the example below, a special tool [`EnvironmentVarGuard`](https://docs.python
 Demo
 ----
 
-In this proof of concept, I decided to make the `COLOR` configurable ([test][test], [code][code], [docs][docs]).
+In this [proof of concept][app], I decided to make the `COLOR` configurable ([test][test], [code][code], [docs][docs]).
 
+  [app]: https://github.com/gonzalo-bulnes/kata-python-web-app
   [test]: https://github.com/gonzalo-bulnes/kata-python-web-app/blob/v1.0.0/test_numbersandcolors.py#L23
   [code]: https://github.com/gonzalo-bulnes/kata-python-web-app/blob/v1.0.0/numbersandcolors.py#L11
   [docs]: https://github.com/gonzalo-bulnes/kata-python-web-app/blame/v1.0.0/README.md#L37-L41
