@@ -6,7 +6,7 @@ General idea
 
 Things outside of your code that affect —or are affected by— the behaviour of your code are called side-effects of your code. _(Calling the former a side-effect may be a bit of a stretch but they both can be treated very similarly to our purposes.)_
 
-Testing code with side-effects is trickier than testing code without side-effects and requires a different approach. Besides, side-effects often mark the boundaries between your code and its dependencies, these are places where change might need to happen without notice.
+Testing code with side-effects is trickier than testing code without side-effects and requires a different approach. Also,side-effects often mark the boundaries between your code and its dependencies. These are places where change might need to happen without notice.
 
 It is then generally interesting to identify those areas of side-effects and start isolating them. There is a hierarchy here: the most important part is to have side-effects in mind, isolating them is nice but doesn't need to be taken too far at first.
 
@@ -24,7 +24,7 @@ How to identify side-effects?
 - Can I precisely predict the result of executing some code?
 - If I were to execute the same code multiple times, would it always return the same values? (e.g. `sing_birthday_song('Alice', 44)` _vs_ `check_weather_outside()` or `roll_fancy_dice(12)`)
 
-If the answer to any of those questions is "no", then there is likely a side-effect somewhere in the function. This is not an exhaustive list, but that's the idea.
+If the answer to any of those questions is "no", then there is likely a side-effect somewhere in the function. This is not an exhaustive list, but it should give you a rough idea.
 
 How to start isolating side-effects?
 ------------------------------------
