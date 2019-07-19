@@ -66,7 +66,7 @@ class TestNumbersAndColors(unittest.TestCase):
 
     def test_lucky_color_is_read_from_environemt(self):
         self.env = EnvironmentVarGuard() # We mock the enviroment using EnvironmentVarGuard
-        self.env.set('COLOR', 'green') # When method calls the enviroment we instruct our mock to return 'green'
+        self.env.set('COLOR', 'green') # When a method calls the enviroment we instruct our mock to return 'green'
         lucky_color = numbersandcolors.lucky_color()
         self.assertEqual(lucky_color, 'green', "expected lucky_color to be 'green'")
  ```       
