@@ -5,7 +5,7 @@ There is no "one true way" to write code or make it production-ready. What _prod
 
 The general rule of thumb is: **don't do more than needed**. The sooner your code is in production, the sooner it actually starts being useful. You are only judge of what is _needed_, and it is a difficult question to answer. Different people around you will have different thoughts about what that means. Try to stay open-minded about it, accept that you might not be fully comfortable with the code you ship to production, but be reasonable, think through the consequences and don't put yourself in a position where you'd be tempted to deny responsibility for what you ship — because you _are_ ultimately responsible for what the code you write does.
 
-I'll do my best to help. Now take a breath, it takes practice, but you can do it! ;)
+> I'll do my best to help. Now take a breath, it takes practice, but you can do it! ; ) — [GB](https://github.com/gonzalo-bulnes)
 
 Two different kinds of steps
 ----------------------------
