@@ -6,7 +6,7 @@ General idea
 
 Things outside of your code that affect —or are affected by— the behaviour of your code are called side-effects of your code. _(Calling the former a side-effect may be a bit of a stretch but they both can be treated very similarly to our purposes.)_
 
-Testing code with side-effects is trickier than testing code without side-effects and requires a different approach. Also,side-effects often mark the boundaries between your code and its dependencies. These are places where change might need to happen without notice.
+Testing code with side-effects is trickier than testing code without side-effects and requires a different approach. Another thing to keep in mind is that your code dependencies are out of your control, and when they change you may need to adapt your code to follow the change. Everything changes eventually and code dependencies are no exception. Because side-effects often mark the boundaries between our code and its dependencies, they often give us insight where change might need to happen.
 
 It is then generally interesting to identify those areas of side-effects and start isolating them. There is a hierarchy here: the most important part is to have side-effects in mind, isolating them is nice but doesn't need to be taken too far at first.
 
