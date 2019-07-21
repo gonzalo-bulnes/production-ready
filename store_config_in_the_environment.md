@@ -4,9 +4,9 @@ Store the configuration in the environment
 General idea
 ------------
 
-Configuration values should not be committed in the code. If you code is public, then configuration should not be embedded with it because it becomes public too (and some configuration values should be kept secret, see below).
+Configuration values should not be committed in the code. If you code is public, then configuration should not be embedded with it because it will become public too. It is important to note that some configuration values, e.g. secrets, should be always be kept secret!
 
-Beyond that, the values of the configuration are not really relevant to the code itself. Once you know that an application relies on a given `API_KEY` to access a third party service, knowing that the API_KEY is `sd4wu8sfd` or `sd345fluae5w345` does not help understanding the code better. Suffice to read the constant name `API_KEY` in a portion of code to understand that some kind of authentication is happening.
+It is not just an issue of security. Besides those concerns, the values of the configuration are not really relevant to the code itself. Once you know that an application relies on a given `API_KEY` to access a third party service, knowing that the API_KEY is `sd4wu8sfd` or `sd345fluae5w345` does not help understanding the code better. Suffice to read the constant name `API_KEY` in a portion of code to understand that some kind of authentication is happening.
 
 What qualifies as configuration?
 --------------------------------
@@ -56,6 +56,21 @@ The environment is not part of the application. That's why it serves our purpose
 
 In the example below, a special tool [`EnvironmentVarGuard`](https://docs.python.org/3/library/test.html#test.support.EnvironmentVarGuard) (part of Python's standard library) is used to simulate changes in the environment from within the test cases.
 
+```python
+from test.support import EnvironmentVarGuard
+import unittest
+
+import numbersandcolors
+
+class TestNumbersAndColors(unittest.TestCase):
+
+    def test_lucky_color_is_read_from_environemt(self):
+        self.env = EnvironmentVarGuard() # We mock the enviroment using EnvironmentVarGuard
+        self.env.set('COLOR', 'green') # When a method calls the enviroment we instruct our mock to return 'green'
+        lucky_color = numbersandcolors.lucky_color()
+        self.assertEqual(lucky_color, 'green', "expected lucky_color to be 'green'")
+ ```
+
 Demo
 ----
 
@@ -67,6 +82,13 @@ In this [proof of concept][app], I decided to make the `COLOR` configurable ([te
   [docs]: https://github.com/gonzalo-bulnes/kata-python-web-app/blame/v1.0.0/README.md#L37-L41
 
 I deployed the application to https://numbersandcolors.herokuapp.com using `turquoise` as my chosen color, but you could deploy your own version using your own preferred provider and choosing whatever `COLOR` value makes you happy — without needing to change any code.
+
+```python
+import os
+
+def lucky_color():
+    return os.getenv('COLOR') or "purple"
+```
 
 Further reading
 ---------------
