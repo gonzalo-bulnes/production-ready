@@ -93,7 +93,7 @@ home_to_work
 
 # A journey_planner_journey is a tuple of two ints and a string.
 # They represent the distance in meters, the altitude gain in meters and the weather.
-home_to_supermarket = (2400, 30, 'sunny') # is a journey_planner_journey ②
+home_to_supermarket = (2400, 30, 'sunny') # is a journey_planner_journey ④
 
 # Expects a journey_planner_journey as an argument.
 recommend_transportation_mode_for_journey(home_to_supermarket)
